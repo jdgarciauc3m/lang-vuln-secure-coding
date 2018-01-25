@@ -1,0 +1,198 @@
+\section{Language Vulnerabilities Standards}
+
+\subsection{ISO standards}
+
+\begin{frame}[t]{ISO/IEC}
+\begin{itemize}
+  \item Standardization activity:
+    \begin{itemize}
+      \item ISO/IEC JTC1/SC22: programming languages, their environments and system software interfaces.
+      \item WG23: Programming Language Vulnerabilities.
+    \end{itemize}
+
+  \vfill\pause
+  \item Guidance to avoiding vulnerabilities in programming languages through language selection and use.
+    \begin{itemize}
+      \item ISO/IEC TR 24772:2010.
+      \item ISO/IEC TR 24772:2013.
+    \end{itemize}
+
+  \vfill\pause
+  \item A new series under development:
+    \begin{itemize}
+      \item ISO/IEC TR 24772-1
+      \item \ldots
+      \item ISO/IEC TR 14772-9
+    \end{itemize} 
+\end{itemize}
+\end{frame}
+
+\begin{frame}[t]{IS/IEC TR 14772 series}
+\begin{itemize}
+  \item ISO/IEC TR 24772-1 $\Rightarrow$ Language independent.
+  \item ISO/IEC TR 24772-2 $\Rightarrow$ Ada.
+  \item ISO/IEC TR 24772-3 $\Rightarrow$ C.
+  \item ISO/IEC TR 24772-4 $\Rightarrow$ Python.
+  \item ISO/IEC TR 24772-5 $\Rightarrow$ Ruby.
+  \item ISO/IEC TR 24772-6 $\Rightarrow$ Spark (Ada subset).
+  \item ISO/IEC TR 24772-7 $\Rightarrow$ PHP.
+  \item ISO/IEC TR 24772-8 $\Rightarrow$ Fortran.
+  \item ISO/IEC TR 24772-9 $\Rightarrow$ C++.
+\end{itemize}
+\end{frame}
+
+\subsection{Vulnerability issues}
+
+\begin{frame}[t]{Predictable execution}
+\begin{itemize}
+  \item Why doesn't software do what I expect?
+    \begin{itemize}
+      \item Incorrect specifications.
+      \item Configuration management mistakes.
+      \item \ldots
+      \item Unexpected behaviour of programming language.
+    \end{itemize}
+
+  \vfill\pause
+  \item What is \textmark{predictable execution}?
+    \begin{itemize}
+      \item Property of a program.
+      \item All possible executions have results that can be predicted from examination 
+            of source code.
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[t]{Getting predictable software}
+\begin{itemize}
+  \item Software may be used:
+    \begin{itemize}
+      \item On unanticipated platforms.
+      \item On unanticipated ways.
+      \item On unanticipated contexts.
+      \item By unanticipated users.
+    \end{itemize}
+
+  \vfill
+  \item Additionally:
+    \begin{itemize}
+      \item We are in a connected world.
+      \item Cyberattacks!
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[t]{Software vulnerabilities}
+\begin{itemize}
+  \item \textmark{Software vulnerability}: \textbad{Unwanted} characteristic of software
+        that may allow software to execute in ways that are unexpected.
+
+    \begin{itemize}
+      \item Programmers introduce vulnerabilities by using language features that are
+            unpredictable.
+    \end{itemize}
+
+  \vfill\pause
+  \item \textmark{Language vulnerability}: Property of a programming language that can
+        contribute to application vulnerabilities.
+    \begin{itemize}
+      \item Security weakness.
+      \item Safety hazard.
+      \item Software defect.
+    \end{itemize}
+
+  \vfill\pause
+  \item \textgood{Example}:
+    \begin{itemize}
+      \item \textbad{Language vulnerability}: String copy does not check length.
+      \item \textbad{Application vulnerability}: Stack attack through buffer overrun.
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[t]{Sources of unpredictability}
+\begin{itemize}
+  \item Incomplete or evolving specifications.
+  \item Undefined behaviour.
+  \item Unspecified behaviour.
+  \item Implementation defined behaviour.
+  \item Difficult features.
+  \item Inadequate language support.
+
+  \vfill\pause
+  \item Additionally:
+    \begin{itemize}
+      \item Porting to other platforms.
+      \item Compilers might also have bugs.
+      \item Use of different compiler switches.
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+\subsection{Rules}
+
+\begin{frame}[t]{Rules in ISO/IEC 24772:2013}
+\begin{itemize}
+  \item 55 language independent rules.
+    \begin{itemize}
+      \item \textmark{Example}: Unchecked array copying.
+    \end{itemize}
+
+  \vfill\pause
+  \item 21 application vulnerabilities.
+    \begin{itemize}
+      \item \textmark{Example}: Resource exhaustion.
+    \end{itemize}
+
+  \vfill\pause
+  \item Informative Annexes for 6 programming languages.
+    \begin{itemize}
+         \item Ada.
+         \item C.
+         \item Python.
+         \item Ruby.
+         \item SPARK.
+         \item PHP.
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[t]{Programming language vulnerabilities}
+\begin{itemize}
+  \item Type system: 13 rules.
+  \item Conversion limits: 3 rules.
+  \item Declarations and definitions: 6 rules.
+  \item Operators/expressions: 4 rules.
+  \item Control flow: 11 rules.
+  \item Memory model: 2 rules.
+  \item Generic programming: 2 rules.
+  \item Libraries: 6 rules.
+  \item Macros: 1 rule.
+  \item Run-time: 2 rules.
+  \item Language specification: 5 rules.
+\end{itemize}
+\end{frame}
+
+\subsection{Summary on ISO/IEC 24772:2013}
+
+\begin{frame}[t]{View on the TR}
+\begin{itemize}
+
+  \item Offers a catalog of vulnerabilities as well as a correspondig
+        taxonomy.
+
+  \vfill
+  \item Generalization for multiple languages is difficult.
+
+  \vfill
+  \item Can be strongly biased from the perspective of some
+        specific programming languages.
+
+  \vfill
+  \item Language particularization should be performed by language experts.
+    \begin{itemize}
+      \item One can be expert in one (or perhaps two) programming languages.
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
